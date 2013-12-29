@@ -1,3 +1,5 @@
 runtime: ruby19
 
-run: exec cucumber 
+run: |
+ export PATH=$PATH:/$(pwd)/drivers/
+ exec cucumber ${ROCK_ARGS} 

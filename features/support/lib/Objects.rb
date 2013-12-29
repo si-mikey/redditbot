@@ -3,23 +3,21 @@ module Reddit
 
    class Objects
 
-    attr_reader :main_url
-    attr_accessor :username
-    attr_accessor :password
-
     def initialize(wd)
      @wd = wd
-     @main_url = 'http://www.reddit.com/'
     end
 
     def username
-     @username =  ENV['USERNAME'] 
+     @wd.find_element(:name, 'user')
     end
 
     def password
-     @password = ENV['PASSWORD']    
+     @wd.find_element(:name, 'passwd')
     end
 
+    def login_btn
+     @wd.find_element(:css, '.submit button')
+    end
 
    end
 

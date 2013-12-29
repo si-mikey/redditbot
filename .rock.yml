@@ -1,5 +1,6 @@
 runtime: ruby19
 
 redditbot: |
+ export MAIN_URL='http://www.reddit.com'
  export PATH=$PATH:/$(pwd)/drivers/
  exec cucumber ${ROCK_ARGS} 

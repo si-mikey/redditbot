@@ -1,5 +1,5 @@
 runtime: ruby19
 
-run: |
+redditbot: |
  export PATH=$PATH:/$(pwd)/drivers/
  exec cucumber ${ROCK_ARGS} 

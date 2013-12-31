@@ -23,6 +23,10 @@ module Reddit
      @objects.login_btn.click
     end     
 
+    def logged_in?
+      @objects.wait.until {!!(@objects.user_link.text.match ENV['USER_NAME'])}
+    end
+  
   end 
  
  end

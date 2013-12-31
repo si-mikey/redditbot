@@ -4,6 +4,8 @@ end
 
 When(/^I enter "(.*?)" as username$/) do |username|
  $redditbot.enter_username(username)
+ #lets store some info 
+ $bot = {'name' => username }
 end
 
 When(/^I enter "(.*?)" as password$/) do |password|
@@ -11,17 +13,17 @@ When(/^I enter "(.*?)" as password$/) do |password|
 end
 
 When(/^I hit login$/) do
- $redditbot.submit_login 
+ $redditbot.submit_login
 end
 
 Then(/^I am logged in$/) do
-  pending # express the regexp above with the code you wish you had
+ expect($redditbot.logged_in?).to eql true 
 end
 
 When(/^debug mode$/) do
-# binding.pry
+#binding.pry
 end
 
-When(/^wait "(.*?)" secs$/) do |secs|
+When(/^wait "(.*?)" seconds$/) do |secs|
  sleep(secs.to_i)
 end

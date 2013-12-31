@@ -19,6 +19,14 @@ module Reddit
      @wd.find_element(:css, '.submit button')
     end
 
+    def user_link
+     @wd.find_element(:css, '.user a')
+    end 
+
+    def wait(timeout=10)
+     Selenium::WebDriver::Wait.new(:timeout => timeout)
+    end   
+
    end
 
   end

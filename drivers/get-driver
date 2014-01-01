@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -e
+
+bit64_linux='http://chromedriver.storage.googleapis.com/2.8/chromedriver_linux64.zip'
+bit32_linux='http://chromedriver.storage.googleapis.com/2.8/chromedriver_linux32.zip'
+mac='http://chromedriver.storage.googleapis.com/2.8/chromedriver_mac32.zip'	
+win='http://chromedriver.storage.googleapis.com/2.8/chromedriver_win32.zip'
+
+
+[[ $(uname -a) =~ "x86_64" ]] && wget ${bit64_linux} && unzip chromedriver_linux64.zip && rm chromedriver_linux64.zip
+[[ $(uname -a) =~ "i686" ]] && wget ${bit32_linux}  && unzip chromedriver_linux32.zip && rm chromedriver_linux32.zip
+[[ $(uname -a) =~ "Darwin" ]] && wget ${mac}  && unzip chromedriver_mac32.zip && rm chromedriver_mac32.zip
+[[ $(uname -a) =~ "Windows" ]] && wget ${win}  && unzip chromedriver_win32.zip && rm chromedriver_win32.zip
+
+
+
+

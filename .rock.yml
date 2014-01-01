@@ -1,5 +1,10 @@
 runtime: ruby19
 
+get_driver: | 
+ cd drivers/
+ . get-driver
+
+
 redditbot: |
  export MAIN_URL='http://www.reddit.com'
  export PATH=$PATH:/$(pwd)/drivers/

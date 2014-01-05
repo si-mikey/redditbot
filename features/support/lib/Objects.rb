@@ -22,11 +22,16 @@ module Reddit
     def user_link
      @wd.find_element(:css, '.user a')
     end 
-
+    
+    #shortcut for selenium wait method
     def wait(timeout=10)
      Selenium::WebDriver::Wait.new(:timeout => timeout)
-    end   
+    end 
 
+    def stories(num='all', order='acs')  
+     @wd.find_elements(:css, '#siteTable .thing')
+    end
+   
    end
 
   end

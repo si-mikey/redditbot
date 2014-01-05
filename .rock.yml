@@ -1,9 +1,8 @@
 runtime: ruby19
 
-get_driver: | 
+install: | 
  cd drivers/
  . get-driver
-
 
 redditbot: |
  export MAIN_URL='http://www.reddit.com'

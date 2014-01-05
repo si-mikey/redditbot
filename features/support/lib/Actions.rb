@@ -24,9 +24,15 @@ module Reddit
     end     
 
     def logged_in?
-      @objects.wait.until {!!(@objects.user_link.text.match ENV['USER_NAME'])}
+      @objects.wait.until {!!(@objects.user_link.text.match $bot['name'])}
+    end 
+
+    def stories
+      @objects.stories
+    	
     end
-  
+
+
   end 
  
  end

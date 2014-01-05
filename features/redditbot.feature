@@ -5,7 +5,5 @@ Feature: A bot that takes a list of interests and upvotes reddit stories that co
   When I enter "mikeylopez" as username
   And I enter "scarface" as password
   And I hit login
-  And wait "10" seconds 
   Then I am logged in
-  
-  
+  And I upvote stories that contain "stuff" 

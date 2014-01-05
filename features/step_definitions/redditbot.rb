@@ -27,3 +27,11 @@ end
 When(/^wait "(.*?)" seconds$/) do |secs|
  sleep(secs.to_i)
 end
+
+When(/^I upvote stories that contain "(.*?)"$/) do |string|
+
+ $redditbot.stories.each { |story| 
+ 
+	 
+ }
+end

@@ -3,7 +3,7 @@ module Reddit
   
   class Actions
 
-		Objects = Reddit::Page::Objects		
+    Objects = Reddit::Page::Objects
 		
     def goto_site
       $browser.navigate.to Objects::SITE_URL 

@@ -2,12 +2,13 @@ require 'selenium-webdriver'
 require 'cucumber'
 require 'rspec'
 require 'pry'
+
+$browser = Selenium::WebDriver::for :chrome
+
 require_relative 'lib/Objects'
 require_relative 'lib/Actions'
 
-$browser = Selenium::WebDriver::for :chrome
-@objects = Reddit::Page::Objects.new($browser)
-$redditbot = Reddit::Bot::Actions.new(@objects)
+$redditbot = Reddit::Bot::Actions.new
 
 RSpec.configure do |config|
  config.expect_with :rspec do |c|

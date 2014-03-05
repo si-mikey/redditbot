@@ -6,4 +6,5 @@ install: |
 
 redditbot: |
  export PATH=$PATH:/$(pwd)/drivers/
+ export SITE='http://reddit.com/'
  exec cucumber ${ROCK_ARGS} 

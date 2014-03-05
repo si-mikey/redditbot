@@ -3,12 +3,14 @@ require 'cucumber'
 require 'rspec'
 require 'pry'
 
-$browser = Selenium::WebDriver::for :chrome
-
 require_relative 'lib/Objects'
 require_relative 'lib/Actions'
 
-$redditbot = Reddit::Bot::Actions.new
+Before do
+  @browser    ||= Selenium::WebDriver::for :chrome
+  @objects    ||= Reddit::Page::Objects.new(@browser)
+  @redditbot  ||= Reddit::Bot::Actions.new(@objects)
+end
 
 RSpec.configure do |config|
  config.expect_with :rspec do |c|
@@ -16,7 +18,6 @@ RSpec.configure do |config|
  end 
 end
 
-at_exit do
- $browser.quit
+After do
+  @browser.quit
 end
-

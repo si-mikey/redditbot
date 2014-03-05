@@ -1,33 +1,41 @@
 module Reddit
   module Page
 
-   module Objects
+   class Objects
 
-    SITE_URL = 'http://www.reddit.com/'
+    attr_accessor :name     
 
-    def self.username
-     $browser.find_element(:name, 'user')
+    def initialize(driver)
+      @browser ||= driver 
     end
 
-    def self.password
-     $browser.find_element(:name, 'passwd')
+    def load
+     @browser.navigate.to ENV['SITE'] 
     end
 
-    def self.login_btn
-     $browser.find_element(:css, '.submit button')
+    def username
+     @browser.find_element(:name, 'user')
     end
 
-    def self.user_link
-     $browser.find_element(:css, '.user a')
+    def password
+     @browser.find_element(:name, 'passwd')
+    end
+
+    def login_btn
+     @browser.find_element(:css, '.submit button')
+    end
+
+    def user_link
+     @browser.find_element(:css, '.user a')
     end 
     
     #shortcut for selenium wait method
-    def self.wait(timeout=10)
+    def wait(timeout=10)
      Selenium::WebDriver::Wait.new(:timeout => timeout)
     end 
 
-    def self.stories(num='all', order='acs')  
-     $browser.find_elements(:css, '#siteTable .thing')
+    def stories(num='all', order='acs')  
+     @browser.find_elements(:css, '#siteTable .thing')
     end
    
    end

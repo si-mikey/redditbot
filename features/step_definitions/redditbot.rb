@@ -1,23 +1,22 @@
 Given(/^I load reddit\.com in a browser$/) do
- $redditbot.goto_site
+ @redditbot.load
 end
 
 When(/^I enter "(.*?)" as username$/) do |username|
- $redditbot.enter_username(username)
- #lets store some info 
- $bot = {'name' => username }
+ @redditbot.enter_username(username)
+ @redditbot.name = username
 end
 
 When(/^I enter "(.*?)" as password$/) do |password|
- $redditbot.enter_password(password)
+ @redditbot.enter_password(password)
 end
 
 When(/^I hit login$/) do
- $redditbot.submit_login
+ @redditbot.submit_login
 end
 
 Then(/^I am logged in$/) do
- expect($redditbot.logged_in?).to eql true 
+ expect(@redditbot.logged_in?).to eql true 
 end
 
 When(/^debug mode$/) do
@@ -30,8 +29,8 @@ end
 
 When(/^I upvote stories that contain "(.*?)"$/) do |string|
 
- $redditbot.stories.each { |story| 
+ @redditbot.upvote_story.each { |story| 
  
-	 
+	 p story 
  }
 end

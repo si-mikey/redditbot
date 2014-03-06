@@ -3,8 +3,6 @@ module Reddit
 
    class Objects
 
-    attr_accessor :name     
-
     def initialize(driver)
       @browser ||= driver 
     end

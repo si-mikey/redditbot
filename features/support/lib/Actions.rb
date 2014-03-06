@@ -3,6 +3,8 @@ module Reddit
  
   class Actions 
 
+    attr_accessor :name
+
     def initialize(objects)
       @objects = objects
     end
@@ -24,7 +26,7 @@ module Reddit
     end     
 
     def logged_in?
-      @objects.wait.until {!!(self.user_link.text.match @objects.name)}
+      @objects.wait.until {!!(@objects.user_link.text.match self.name)}
     end 
 
     def upvote_story 

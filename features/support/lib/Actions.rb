@@ -29,10 +29,18 @@ module Reddit
       @objects.wait.until {!!(@objects.user_link.text.match self.name)}
     end 
 
-    def upvote_story 
+    def posts 
       @objects.stories
     end
 
+    def upvote(post)
+      
+      post.find_element(:css, ".up").click 
+    end
+
+    def downvote(post)
+      post.find_element(:css, ".down").click
+    end
 
   end 
  

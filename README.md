@@ -26,3 +26,4 @@ TODO:
 2. Add downvoting for specific posts
 3. Add commenting for specific posts 
 4. Add running specific features and scenarios 
+5. Add ability to run headlessly (use mechanize)

@@ -27,14 +27,13 @@ When(/^wait "(.*?)" seconds$/) do |secs|
  sleep(secs.to_i)
 end
 
-When(/^I upvote posts that contain "(.*?)"$/) do |term|
+When(/^I upvote posts that contain "(.*?)"$/) do |terms|
 
-  @redditbot.posts.each { |post|
-
-    term = term.downcase 
-    @redditbot.upvote(post) if post.text.downcase.include?(term)
-  
+  terms.split(/, /).each { |term|
     
-}
-
+    @redditbot.posts.each { |post|
+      term = term.downcase 
+      @redditbot.upvote(post) if post.text.downcase.include?(term)
+    }
+  }
 end

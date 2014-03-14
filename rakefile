@@ -1,0 +1,5 @@
+task :install do
+  system("cd drivers; bash get-driver")
+end
+
+task :default => :install

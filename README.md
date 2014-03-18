@@ -1,20 +1,27 @@
-redditbot
+redditbot:
 =========
 
 A bot written in ruby with cucumber with various adapters to interact with Reddit.com
 This bot uses [rockstack](http://rockstack.org) as its' managed language runtime
 
 
-Install 
+Install:
 =======
 
     rock build (installs dependent gems)
     
-    rock install (downloads the chrome driver)
+    rock install (downloads the chrome driver - wget required)
 
 
+Usage:
+=====
 
-Run
+    Edit the .feature file add username/password of the account you want
+    the bot to use. You can arrange the steps (ex. Given, When, Then, And)
+    to make the bot accomplish what you want. I'll be adding more steps. 
+
+
+Run:
 ===
 
     rock redditbot (runs the .features files in features/)

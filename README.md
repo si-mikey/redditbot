@@ -34,3 +34,9 @@ TODO:
 3. Add commenting for specific posts 
 4. Add running specific features and scenarios 
 5. Add ability to run headlessly (use mechanize)
+
+Disclaimer:
+===========
+
+    Use at your own risk. Abusing this bot will get you banned from reddit.
+     

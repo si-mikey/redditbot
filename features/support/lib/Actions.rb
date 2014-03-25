@@ -34,7 +34,6 @@ module Reddit
     end
 
     def upvote(post)
-      
       post.find_element(:css, ".up").click 
     end
 

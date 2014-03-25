@@ -27,13 +27,12 @@ When(/^wait "(.*?)" seconds$/) do |secs|
  sleep(secs.to_i)
 end
 
-When(/^I upvote posts that contain "(.*?)"$/) do |terms|
-    
+When(/^I "(.*?)" posts that contain "(.*?)"$/) do |action, terms|
+   
+  func_ref = @redditbot.method(action.to_sym) 
   @redditbot.posts.each { |post|
-      
     terms.split(/,/).each { |term|
-       
-      @redditbot.upvote(post) if post.text.downcase.include?(term.downcase)
+      func_ref.call(post) if post.text.downcase.include?(term.downcase)
     }
   }
 end

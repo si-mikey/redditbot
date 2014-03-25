@@ -6,4 +6,6 @@ Feature: A bot that takes a list of interests and upvotes reddit stories that co
   And I enter "" as password
   And I hit login
   Then I am logged in
-  And I upvote posts that contain "programming, ruby, php, perl, eli5, linux, haskell, rust, todayilearned"
+  And I "downvote" posts that contain "Russia"
+
+
